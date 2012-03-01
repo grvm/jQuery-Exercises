@@ -206,6 +206,7 @@ body {
 
 #slideshow {
 	margin: 0;
+	height: 383px;
 }
 
 #slideshow li {
@@ -339,4 +340,20 @@ margin: 15px 0;
 
 .tabs li:hover{
 	color: #ff0000;
+}
+
+#slideNav{
+	position:absolute;
+	top:480px;
+	right:520px;
+	width:90px;
+}
+
+#slideNav li{
+	padding:5px;
+	list-style:none;
+	display:inline;
+	background:white;
+	opacity:0.5;
+	-moz-opacity:0.5;
 }

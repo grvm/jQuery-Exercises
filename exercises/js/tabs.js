@@ -10,7 +10,7 @@ function(){
 		function(){
 			$(this).siblings().removeClass('current').end().addClass('current');
 			modules.hide().eq($(this).index()).show().end();
-			})
+		})
 		.appendTo(ul);
 	});
 	ul.children().first().click();
