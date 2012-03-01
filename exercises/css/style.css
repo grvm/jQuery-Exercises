@@ -325,5 +325,18 @@ margin: 15px 0;
 	height: 10000px;
 	background-color: #333;
 	z-index: 100;
-	
+
+}
+
+/* Added for Tabs.js*/
+
+.tabs li{
+	list-style: none;
+	display: inline;
+	padding:10px;
+	cursor: pointer;
+}
+
+.tabs li:hover{
+	color: #ff0000;
 }
