@@ -11,5 +11,5 @@ setInterval(
 		next.fadeIn('slow').addClass('current');
 		$('#slideNav li').css('background', 'white').eq(next.index()).css('background', 'red');
 	},
-	3000)
+	8000)
 );
