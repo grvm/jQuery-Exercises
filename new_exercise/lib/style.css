@@ -1,0 +1,23 @@
+span{
+	padding:10px;
+}
+
+.product{
+	display:inline-block;
+	padding:5px;
+	width:520px;
+}
+
+.product span{
+	width:180px;
+}
+
+.product #chars{
+	float:right;
+	width:200px;
+}
+
+.product #image{
+	float:left;
+	width:300px;
+}
