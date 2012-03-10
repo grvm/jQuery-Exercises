@@ -21,26 +21,18 @@ function(){
 									data = $.parseJSON(data.responseText);
 									productDisplay.displayData(data);
 								}
-});
-		$("#product-toggle").on('change',
-		function(){
-			if($(this).val() == 1){
-				$('.product[data-out-of-stock]').show();
-			}else{
-				$('.product[data-out-of-stock]').hide();
-			}
-		});
+	});
+
+	$("#product-toggle").on('change',
+	function(){
+		if($(this).val() == 1){
+			$('.product[data-out-of-stock]').show();
+		}else{
+			$('.product[data-out-of-stock]').hide();
+		}
+	});
 
 });
-
-
-function showFilter(prod, arg1, arg2){
-	$(prod+'['+arg1+'=true]['+arg2+'=true]').length ? $(prod+'['+arg1+'=true]['+arg2+'=true]').show() : ( $(prod+'['+arg2+'=true]').length ? '' : $(prod+'['+arg1+'=true]').show() );
-}
-
-function hideFilter(prod, arg1, arg2){
-	$(prod+'['+arg1+'=true]['+arg2+'=true]').length ? $(prod+'['+arg1+'=true]['+arg2+'=true]').show() : ($(prod+'['+arg1+'=true]').length ? $(prod+'['+arg1+'=true]').show() : ( ($(prod+'['+arg2+'=true]').length ? $(prod+'['+arg2+'=true]').show() : $(prod).show() ) ) );
-}
 
    /*
     *  WA: Define functions under a namespace using module patter.
@@ -48,6 +40,15 @@ function hideFilter(prod, arg1, arg2){
     *    Defining functions an variables in global namespace is a bad practice.
     */
 var productDisplay = (function(){
+
+
+	var showFilter = function(prod, arg1, arg2){
+		$(prod+'['+arg1+'=true]['+arg2+'=true]').length ? $(prod+'['+arg1+'=true]['+arg2+'=true]').show() : ( $(prod+'['+arg2+'=true]').length ? '' : $(prod+'['+arg1+'=true]').show() );
+	}
+
+	var hideFilter = function(prod, arg1, arg2){
+		$(prod+'['+arg1+'=true]['+arg2+'=true]').length ? $(prod+'['+arg1+'=true]['+arg2+'=true]').show() : ($(prod+'['+arg1+'=true]').length ? $(prod+'['+arg1+'=true]').show() : ( ($(prod+'['+arg2+'=true]').length ? $(prod+'['+arg2+'=true]').show() : $(prod).show() ) ) );
+	}
 
 	return{
 		displayData : function(data){
@@ -64,7 +65,7 @@ var productDisplay = (function(){
 				 *    Use data-* attributes instead.
 				 */
 				var prodHTML = "<div class='product' "+(!parseInt(product[4]) ? 'data-in-stock' : 'data-out-of-stock')+" data-color='"+product[2]+"'  data-brand='"+product[3].replace(' ','')+"'>" +
-												"<div id='image'><img src='images/"+product[1]+"' /></div></div>";
+												"<div ><img src='images/"+product[1]+"' alt='"+product[1]+"' /></div></div>";
 
 				/*
 				 * WA: Always try to append elements to DOM outside of a loop
