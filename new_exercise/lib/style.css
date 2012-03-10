@@ -5,17 +5,13 @@ span{
 .product{
 	display:inline-block;
 	padding:5px;
-	width:520px;
+	width:360px;
 }
 
 .product span{
 	width:180px;
 }
 
-.product #chars{
-	float:right;
-	width:200px;
-}
 
 .product #image{
 	float:left;
